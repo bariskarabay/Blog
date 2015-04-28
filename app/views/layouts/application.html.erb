@@ -20,22 +20,25 @@
          	<li><a href="https://github.com/bariskarabay"></li>
          	<li><a href="mailto:bariskarabay@yandex.com">Email</a></li>
          </ul>
-
+          
+         <% if !user_signed_in? %> 
          <p class="sign_in">Admin Login</p>
+         <% end %>
     </div>
 
     <div id="main_content">
     	<div id="header">
     		<p>Yayımlanmış Yazılar</p>
-
+<% if user_signed_in? %>
     		<div class="buttons">
     			<button class="button">
-    				<%= link_to "New Post", new_post_path %>
+    				<%= link_to "Yeni Yazı", new_post_path %>
     			</button>
     			<button class="button">
-    				Log Out
+    				Çıkış
     			</button>
     		</div>
+<% end %> 
     	</div>
 
     	<% flash.each do |name, msg| %>
