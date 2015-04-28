@@ -5,6 +5,8 @@
 
 <p class="date">
      <%= time_ago_in_words(@post.created_at) %>  önce oluşturuldu
+     | <%= link_to 'Düzenle', edit_post_path(@post) %>
+     | <%= link_to 'Sil', post_path(@post), method: :delete, data: {confirm: 'Bu yazıyı silmek istiyor musunuz?'} %>
 </p>
 
 <p class="body">
